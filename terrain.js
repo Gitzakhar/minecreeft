@@ -162,58 +162,52 @@ export class Terrain {
 
 
 
-    tree(x,y,z){
+        tree(x,y,z){
 
 
-    // trunk
+        for(let i=0;i<5;i++){
 
-    for(let i=0;i<5;i++){
+            this.world.setBlock(
+                x,
+                y+i,
+                z,
+                "wood"
+            );
 
-        this.world.setBlock(
-            x,
-            y+i,
-            z,
-            "wood"
-        );
-
-    }
+        }
 
 
-
-    // leaves
-
-    for(
-        let dx=-2;
-        dx<=2;
-        dx++
-    ){
 
         for(
-            let dz=-2;
-            dz<=2;
-            dz++
+            let dx=-2;
+            dx<=2;
+            dx++
         ){
 
             for(
-                let dy=3;
-                dy<=5;
-                dy++
+                let dz=-2;
+                dz<=2;
+                dz++
             ){
 
-
-                if(
-                    Math.abs(dx)
-                    +
-                    Math.abs(dz)
-                    <4
+                for(
+                    let dy=3;
+                    dy<=5;
+                    dy++
                 ){
 
-                    this.world.setBlock(
-                        x+dx,
-                        y+dy,
-                        z+dz,
-                        "leaves"
-                    );
+                    if(
+                        Math.abs(dx)+Math.abs(dz)<4
+                    ){
+
+                        this.world.setBlock(
+                            x+dx,
+                            y+dy,
+                            z+dz,
+                            "leaves"
+                        );
+
+                    }
 
                 }
 
