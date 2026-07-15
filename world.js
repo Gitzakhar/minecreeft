@@ -121,6 +121,57 @@ this.updateChunks(
 
 }
 
+updateChunks(position){
+
+
+    const cx =
+        Math.floor(
+            position.x / CHUNK_SIZE
+        );
+
+
+    const cz =
+        Math.floor(
+            position.z / CHUNK_SIZE
+        );
+
+
+
+    if(
+        cx === this.lastChunkX &&
+        cz === this.lastChunkZ
+    )
+        return;
+
+
+
+    this.lastChunkX = cx;
+    this.lastChunkZ = cz;
+
+
+
+    for(
+        let x=-this.renderDistance;
+        x<=this.renderDistance;
+        x++
+    ){
+
+        for(
+            let z=-this.renderDistance;
+        z<=this.renderDistance;
+        z++
+        ){
+
+            this.loadChunk(
+                cx+x,
+                cz+z
+            );
+
+        }
+
+    }
+
+}
 
 
 
