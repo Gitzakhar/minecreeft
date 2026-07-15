@@ -398,6 +398,53 @@ update(playerPosition){
     );
 
 }
+    updateChunks(position){
 
+
+        const cx =
+            Math.floor(
+                position.x / 16
+            );
+
+
+        const cz =
+            Math.floor(
+                position.z / 16
+            );
+
+
+        if(
+            cx === this.lastChunkX &&
+            cz === this.lastChunkZ
+        )
+            return;
+
+
+        this.lastChunkX = cx;
+        this.lastChunkZ = cz;
+
+
+        for(
+            let x=-3;
+            x<=3;
+            x++
+        ){
+
+            for(
+                let z=-3;
+                z<=3;
+                z++
+            ){
+
+                this.loadChunk(
+                    cx+x,
+                    cz+z
+                );
+
+            }
+
+        }
+
+    }
 
 }
