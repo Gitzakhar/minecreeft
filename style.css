@@ -1,0 +1,78 @@
+body{
+    margin:0;
+    overflow:hidden;
+    background:#87ceeb;
+    font-family:Arial;
+}
+
+
+canvas{
+    display:block;
+}
+
+
+#crosshair{
+
+    position:absolute;
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    color:white;
+
+    font-size:30px;
+
+    pointer-events:none;
+
+}
+
+
+#hud{
+
+    position:absolute;
+
+    top:10px;
+    left:10px;
+
+    color:white;
+
+    text-shadow:0 0 5px black;
+
+}
+
+
+#hotbar{
+
+    position:absolute;
+
+    bottom:20px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    gap:5px;
+
+}
+
+
+.slot{
+
+    width:45px;
+    height:45px;
+
+    border:2px solid white;
+
+    background:#3338;
+
+}
+
+
+.selected{
+
+    border-color:yellow;
+
+}
