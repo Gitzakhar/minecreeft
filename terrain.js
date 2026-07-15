@@ -162,9 +162,10 @@ export class Terrain {
 
 
 
-        tree(x,y,z){
+           tree(x,y,z){
 
 
+        // trunk
         for(let i=0;i<5;i++){
 
             this.world.setBlock(
@@ -178,23 +179,13 @@ export class Terrain {
 
 
 
-        for(
-            let dx=-2;
-            dx<=2;
-            dx++
-        ){
+        // leaves
+        for(let dx=-2; dx<=2; dx++){
 
-            for(
-                let dz=-2;
-                dz<=2;
-                dz++
-            ){
+            for(let dz=-2; dz<=2; dz++){
 
-                for(
-                    let dy=3;
-                    dy<=5;
-                    dy++
-                ){
+                for(let dy=3; dy<=5; dy++){
+
 
                     if(
                         Math.abs(dx)+Math.abs(dz)<4
@@ -214,6 +205,7 @@ export class Terrain {
             }
 
         }
+
 
     }
 
